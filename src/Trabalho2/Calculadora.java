@@ -36,11 +36,11 @@ public class Calculadora {
         return arvoreCalculo;
     }
 
-    public int calcular(ArvoreBinaria<String> arvore) {
+    public double calcular(ArvoreBinaria<String> arvore) {
         return this.calcular(arvore.getRaiz());
     }
 
-    public int calcular(NoArvoreBinaria<String> no) {
+    public double calcular(NoArvoreBinaria<String> no) {
         if (no == null) {
             return 0;
         }
@@ -58,7 +58,7 @@ public class Calculadora {
                     || no.getDireita().getInfo().equals("/")) {
                 this.calcular(no.getDireita());
             } 
-                int soma = Integer.parseInt(no.getEsquerda().getInfo()) + Integer.parseInt(no.getDireita().getInfo());
+                double soma = Double.parseDouble(no.getEsquerda().getInfo()) + Double.parseDouble(no.getDireita().getInfo());
                 no.setInfo("" + soma);
                 no.setDireita(null);
                 no.setEsquerda(null);
@@ -76,7 +76,7 @@ public class Calculadora {
                     || no.getDireita().getInfo().equals("/")) {
                 this.calcular(no.getDireita());
             } 
-                int subtracao = Integer.parseInt(no.getEsquerda().getInfo()) - Integer.parseInt(no.getDireita().getInfo());
+                double subtracao = Double.parseDouble(no.getEsquerda().getInfo()) - Double.parseDouble(no.getDireita().getInfo());
                 no.setInfo("" + subtracao);
                 no.setDireita(null);
                 no.setEsquerda(null);
@@ -94,7 +94,7 @@ public class Calculadora {
                     || no.getDireita().getInfo().equals("/")) {
                 this.calcular(no.getDireita());
             } 
-                int multiplica = Integer.parseInt(no.getEsquerda().getInfo()) * Integer.parseInt(no.getDireita().getInfo());
+                double multiplica = Double.parseDouble(no.getEsquerda().getInfo()) * Double.parseDouble(no.getDireita().getInfo());
                 no.setInfo("" + multiplica);
                 no.setDireita(null);
                 no.setEsquerda(null);
@@ -112,13 +112,13 @@ public class Calculadora {
                     || no.getDireita().getInfo().equals("/")) {
                 this.calcular(no.getDireita());
             } 
-                int divisao = Integer.parseInt(no.getEsquerda().getInfo()) / Integer.parseInt(no.getDireita().getInfo());
+                double divisao = Double.parseDouble(no.getEsquerda().getInfo()) / Double.parseDouble(no.getDireita().getInfo());
                 no.setInfo("" + divisao);
                 no.setDireita(null);
                 no.setEsquerda(null);
             
         } 
-        return Integer.parseInt(no.getInfo());
+        return Double.parseDouble(no.getInfo());
     }
 
 }

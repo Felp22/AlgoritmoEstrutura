@@ -14,7 +14,7 @@ public class teste {
         Calculadora calc = new Calculadora();
         
      
-        System.out.println(calc.getArvore("50").toString());
-        System.out.println("Resultado: "+calc.calcular(calc.getArvore("50")));
+        System.out.println(calc.getArvore("2 2 +").toString());
+        System.out.println("Resultado: "+calc.calcular(calc.getArvore("1 2 2.2 10 6 2 / + + * -")));
     }
 }
